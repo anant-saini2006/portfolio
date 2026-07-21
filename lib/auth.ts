@@ -20,8 +20,8 @@ export function verifyPassword(password: string): boolean {
  * The signature is a hex-encoded hash of (timestamp + secret).
  */
 function sign(payload: string): string {
-  const secret = process.env.ADMIN_SECRET;
-  if (!secret) throw new Error("ADMIN_SECRET is not set.");
+  const secret = process.env.ADMIN_SESSION_SECRET;
+  if (!secret) throw new Error("ADMIN_SESSION_SECRET is not set.");
   // Simple HMAC-like signature using Web Crypto-compatible approach
   // For edge/serverless compatibility, we use a basic hash
   const data = payload + "." + secret;
