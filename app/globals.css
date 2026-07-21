@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.primary');
+  }
+}
+
+@layer utilities {
+  .hairline-border { border-color: theme('colors.hairline'); }
+  .hairline-b { border-bottom: 1px solid theme('colors.hairline'); }
+  .hairline-t { border-top: 1px solid theme('colors.hairline'); }
+  .hairline-l { border-left: 1px solid theme('colors.hairline'); }
+  .hairline-r { border-right: 1px solid theme('colors.hairline'); }
+  
+  .surface-card { background-color: theme('colors.surface-card'); }
+  
+  .grid-bg {
+    background-image: 
+      linear-gradient(to right, rgba(207, 207, 194, 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(207, 207, 194, 0.2) 1px, transparent 1px);
+    background-size: 2rem 2rem;
+  }
+}
+
+@keyframes cellFlash {
+  0% { background-color: theme('colors.surface-card'); }
+  50% { background-color: rgba(31, 92, 62, 0.1); }
+  100% { background-color: theme('colors.surface-card'); }
+}
+
+.flash-active {
+  animation: cellFlash 0.8s ease-out;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+.animated-chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
