@@ -1,4 +1,4 @@
-import { GraduationCap, Award, FileBadge } from "lucide-react";
+import { GraduationCap, Award, FileBadge, Download } from "lucide-react";
 
 interface AboutProps {
   aboutText: string;
@@ -52,17 +52,33 @@ export function About({ aboutText }: AboutProps) {
             </div>
             
             <div className="flex flex-col">
-              <div className="px-6 py-4 border-b hairline-border hover:bg-surface-bright transition-colors">
-                <p className="font-body-md text-primary text-sm font-medium mb-1">Data Analytics Internship</p>
-                <p className="font-body-md text-on-surface-variant text-sm mb-2">PrimrIQ</p>
-                <div className="font-data-md text-xs text-outline">ID: PIQ/CERT/260714/DA/C991</div>
-              </div>
+              <a 
+                href="/certificates/primriq-data-analytics-internship.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex justify-between items-center px-6 py-4 border-b hairline-border hover:bg-surface-bright hover:border-forest-green transition-colors"
+              >
+                <div>
+                  <p className="font-body-md text-primary text-sm font-medium mb-1">Data Analytics Internship</p>
+                  <p className="font-body-md text-on-surface-variant text-sm mb-2">PrimrIQ</p>
+                  <div className="font-data-md text-xs text-outline">ID: PIQ/CERT/260714/DA/C991</div>
+                </div>
+                <Download size={18} strokeWidth={1.5} className="text-outline group-hover:text-forest-green transition-colors flex-shrink-0 ml-4" />
+              </a>
               
-              <div className="px-6 py-4 hover:bg-surface-bright transition-colors">
-                <p className="font-body-md text-primary text-sm font-medium mb-1">Data Analysis: SQL, Tableau, Power BI & Excel</p>
-                <p className="font-body-md text-on-surface-variant text-sm mb-2">Udemy (April 2026)</p>
-                <div className="font-data-md text-xs text-outline">ID: UC-0515de3c-1f95-4c74-a287-1371cece7eba</div>
-              </div>
+              <a 
+                href="/certificates/udemy-data-analysis-sql-tableau-powerbi-excel.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex justify-between items-center px-6 py-4 hover:bg-surface-bright border-b border-transparent hover:border-forest-green transition-colors"
+              >
+                <div>
+                  <p className="font-body-md text-primary text-sm font-medium mb-1">Data Analysis: SQL, Tableau, Power BI & Excel</p>
+                  <p className="font-body-md text-on-surface-variant text-sm mb-2">Udemy (April 2026)</p>
+                  <div className="font-data-md text-xs text-outline">ID: UC-0515de3c-1f95-4c74-a287-1371cece7eba</div>
+                </div>
+                <Download size={18} strokeWidth={1.5} className="text-outline group-hover:text-forest-green transition-colors flex-shrink-0 ml-4" />
+              </a>
             </div>
           </div>
 
