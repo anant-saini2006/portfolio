@@ -31,6 +31,7 @@ export default async function Home() {
   const githubUrl =
     content.github_url ?? "https://github.com/anant-saini2006";
   const resumeUrl = content.resume_url ?? "/resume.pdf";
+  const profilePhotoUrl = content.profile_photo_url ?? null;
 
   let skills: SkillGroup[] = [
     { category: "BI & Visualization", items: ["Power BI", "Tableau", "Streamlit", "Plotly", "Matplotlib", "Seaborn"] },
@@ -77,7 +78,7 @@ export default async function Home() {
     <>
       <Header resumeUrl={resumeUrl} />
       <main className="flex-grow w-full max-w-7xl mx-auto px-grid-margin py-stack-gap md:py-12 flex flex-col gap-12 relative z-10">
-        <Hero tagline={tagline} />
+        <Hero tagline={tagline} profilePhotoUrl={profilePhotoUrl} />
         <About aboutText={aboutText} />
         <Skills skills={skills} />
         <Experience entries={experience} />

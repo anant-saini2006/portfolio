@@ -1,6 +1,7 @@
 import { getSiteContent } from "@/lib/db";
 import { updateSiteContentAction } from "@/lib/actions";
-import { Check } from "lucide-react";
+import { Check, User } from "lucide-react";
+import { ProfilePhotoUploader } from "./ProfilePhotoUploader";
 
 export default async function AdminContentPage(props: { searchParams: Promise<{ saved?: string }> }) {
   const searchParams = await props.searchParams;
@@ -20,6 +21,17 @@ export default async function AdminContentPage(props: { searchParams: Promise<{ 
           <Check size={16} /> Content saved successfully. The public site has been updated.
         </div>
       )}
+
+      {/* Profile Photo Section */}
+      <div className="surface-card border hairline-border p-8">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="bg-hairline p-3">
+            <User size={24} className="text-primary" strokeWidth={1.5} />
+          </div>
+          <h2 className="font-headline-md text-headline-md text-primary">Profile Photo</h2>
+        </div>
+        <ProfilePhotoUploader currentPhotoUrl={content.profile_photo_url || null} />
+      </div>
 
       <form action={updateSiteContentAction} className="surface-card border hairline-border p-8 flex flex-col gap-8">
         

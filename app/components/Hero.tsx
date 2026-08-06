@@ -7,9 +7,10 @@ import { CountUp } from "./CountUp";
 
 interface HeroProps {
   tagline: string;
+  profilePhotoUrl?: string | null;
 }
 
-export function Hero({ tagline }: HeroProps) {
+export function Hero({ tagline, profilePhotoUrl }: HeroProps) {
   const [isOn, setIsOn] = useState(true);
   const [hasToggled, setHasToggled] = useState(false);
   const [flash, setFlash] = useState(false);
@@ -33,12 +34,31 @@ export function Hero({ tagline }: HeroProps) {
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-px lg:bg-hairline max-w-7xl mx-auto w-full mb-12">
       {/* Left Column: Intro */}
       <div className="lg:col-span-7 bg-background lg:pr-8 flex flex-col justify-center gap-6">
-        <div>
-          <h1 className="font-headline-xl text-headline-xl text-primary mb-2">Anant Saini</h1>
-          <div className="flex items-center gap-3 font-data-md text-data-md text-on-surface-variant uppercase tracking-widest flex-wrap">
-            <span>Data Analyst</span>
-            <span className="text-hairline">|</span>
-            <span>Business Analyst</span>
+        <div className="flex items-center gap-5">
+          {/* Profile Photo */}
+          <div className="relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-hairline bg-surface-bright shadow-sm">
+            {profilePhotoUrl ? (
+              <img
+                src={profilePhotoUrl}
+                alt="Anant Saini"
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-surface-bright">
+                <span className="text-2xl md:text-3xl font-headline-lg text-on-surface-variant select-none">
+                  AS
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <h1 className="font-headline-xl text-headline-xl text-primary mb-2">Anant Saini</h1>
+            <div className="flex items-center gap-3 font-data-md text-data-md text-on-surface-variant uppercase tracking-widest flex-wrap">
+              <span>Data Analyst</span>
+              <span className="text-hairline">|</span>
+              <span>Business Analyst</span>
+            </div>
           </div>
         </div>
         

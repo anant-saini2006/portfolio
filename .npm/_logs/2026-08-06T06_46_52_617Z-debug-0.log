@@ -1,0 +1,47 @@
+0 verbose cli /opt/homebrew/Cellar/node/26.4.0/bin/node /opt/homebrew/bin/npm
+1 info using npm@11.17.0
+2 info using node@v26.4.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/anant/Documents/My Documents/Porfolio/.npmrc
+5 silly config load:file:/opt/homebrew/etc/npmrc
+6 verbose title npm install @vercel/blob
+7 verbose argv "install" "@vercel/blob"
+8 verbose logfile logs-max:10 dir:/Users/anant/Documents/My Documents/Porfolio/.npm/_logs/2026-08-06T06_46_52_617Z-
+9 verbose logfile /Users/anant/Documents/My Documents/Porfolio/.npm/_logs/2026-08-06T06_46_52_617Z-debug-0.log
+10 silly logfile done cleaning log files
+11 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ENOTFOUND
+12 silly packumentCache heap:4395630592 maxSize:1098907648 maxEntrySize:549453824
+13 silly idealTree buildDeps
+14 silly fetch manifest @vercel/blob@*
+15 silly packumentCache full:https://registry.npmjs.org/@vercel%2fblob cache-miss
+16 http fetch GET https://registry.npmjs.org/@vercel%2fblob attempt 1 failed with ENOTFOUND
+17 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with ENOTFOUND
+18 http fetch GET https://registry.npmjs.org/@vercel%2fblob attempt 2 failed with ENOTFOUND
+19 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with ENOTFOUND
+20 http fetch GET https://registry.npmjs.org/@vercel%2fblob attempt 3 failed with ENOTFOUND
+21 silly placeDep ROOT @vercel/blob@ OK for: portfolio@0.1.0 want: *
+22 verbose type system
+23 verbose stack FetchError: request to https://registry.npmjs.org/@vercel%2fblob failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+23 verbose stack     at ClientRequest.<anonymous> (/opt/homebrew/lib/node_modules/npm/node_modules/minipass-fetch/lib/index.js:130:14)
+23 verbose stack     at ClientRequest.emit (node:events:509:20)
+23 verbose stack     at emitErrorEvent (node:_http_client:111:11)
+23 verbose stack     at _destroy (node:_http_client:1006:9)
+23 verbose stack     at onSocketNT (node:_http_client:1027:5)
+23 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+24 error code ENOTFOUND
+25 error syscall getaddrinfo
+26 error errno ENOTFOUND
+27 error network request to https://registry.npmjs.org/@vercel%2fblob failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+28 error network This is a problem related to network connectivity.
+28 error network In most cases you are behind a proxy or have bad network settings.
+28 error network
+28 error network If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+29 silly unfinished npm timer reify 1785998812796
+30 silly unfinished npm timer reify:loadTrees 1785998812796
+31 verbose cwd /Users/anant/Documents/My Documents/Porfolio
+32 verbose os Darwin 25.5.0
+33 verbose node v26.4.0
+34 verbose npm  v11.17.0
+35 verbose exit 1
+36 verbose code 1
+37 error A complete log of this run can be found in: /Users/anant/Documents/My Documents/Porfolio/.npm/_logs/2026-08-06T06_46_52_617Z-debug-0.log
