@@ -21,6 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.anantportfolio.me/"),
   title: "Anant Saini — Data Analyst & Business Analyst",
   description: "I turn raw data into decisions — like finding a $78.1M profit opportunity hiding in loan-grade risk.",
 };
