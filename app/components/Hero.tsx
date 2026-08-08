@@ -11,7 +11,7 @@ interface HeroProps {
 }
 
 export function Hero({ tagline, profilePhotoUrl }: HeroProps) {
-  const [isOn, setIsOn] = useState(true);
+  const [isOn, setIsOn] = useState(false);
   const [hasToggled, setHasToggled] = useState(false);
   const [flash, setFlash] = useState(false);
 
@@ -20,7 +20,7 @@ export function Hero({ tagline, profilePhotoUrl }: HeroProps) {
     setIsOn(newState);
     if (!hasToggled) setHasToggled(true);
     
-    if (!newState) {
+    if (newState) {
       setFlash(true);
       setTimeout(() => setFlash(false), 800);
     }
@@ -75,10 +75,10 @@ export function Hero({ tagline, profilePhotoUrl }: HeroProps) {
             </div>
             <div className="flex justify-between gap-8 font-body-md text-sm text-on-surface-variant items-center">
               <span>With Policy A:</span>
-              <span className={`font-data-lg font-bold transition-colors ${!isOn ? 'text-forest-green' : 'text-primary'} ${flash ? 'flash-active px-1' : ''}`}>
+              <span className={`font-data-lg font-bold transition-colors ${isOn ? 'text-forest-green' : 'text-primary'} ${flash ? 'flash-active px-1' : ''}`}>
                 {!hasToggled ? (
                   "--"
-                ) : !isOn ? (
+                ) : isOn ? (
                   <CountUp to={78.1} decimals={1} prefix="+$" suffix="M" duration={0.8} />
                 ) : (
                   "--"
@@ -97,11 +97,11 @@ export function Hero({ tagline, profilePhotoUrl }: HeroProps) {
             <line stroke="#CFCFC2" strokeDasharray="2 2" strokeWidth="0.5" x1="0" x2="400" y1="75" y2="75"></line>
             {/* Animated Line */}
             <motion.path 
-              d={!hasToggled ? baselinePath : (!isOn ? policyAPath : baselinePath)}
+              d={!hasToggled ? baselinePath : (isOn ? policyAPath : baselinePath)}
               initial={{ pathLength: 0 }}
               animate={{ 
                 pathLength: 1, 
-                d: !hasToggled ? baselinePath : (!isOn ? policyAPath : baselinePath)
+                d: !hasToggled ? baselinePath : (isOn ? policyAPath : baselinePath)
               }}
               transition={{ 
                 pathLength: { duration: 1.5, ease: "easeOut", delay: 0.2 },

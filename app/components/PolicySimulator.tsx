@@ -57,10 +57,10 @@ export function PolicySimulator({ isOn, hasToggled, onToggle, flash }: PolicySim
         <div className="flex hairline-b px-4 py-3 items-center hover:bg-surface-bright transition-colors">
           <div className="w-1/2 font-body-md text-sm text-on-surface">Projected Profit</div>
           <div className="w-1/2 text-right">
-            <span className={`font-data-lg text-data-lg font-bold px-2 py-1 transition-colors ${!isOn ? 'text-forest-green' : 'text-on-surface'} ${flash ? 'flash-active' : ''}`}>
+            <span className={`font-data-lg text-data-lg font-bold px-2 py-1 transition-colors ${isOn ? 'text-forest-green' : 'text-on-surface'} ${flash ? 'flash-active' : ''}`}>
               {!hasToggled ? (
                 "--"
-              ) : !isOn ? (
+              ) : isOn ? (
                 <CountUp to={78.1} decimals={1} prefix="+$" suffix="M" />
               ) : (
                 "--"
@@ -73,7 +73,7 @@ export function PolicySimulator({ isOn, hasToggled, onToggle, flash }: PolicySim
         <div className="flex px-4 py-3 items-center hover:bg-surface-bright transition-colors">
           <div className="w-1/2 font-body-md text-sm text-on-surface">Loan Volume</div>
           <div className="w-1/2 text-right font-data-md text-data-md text-on-surface-variant">
-            {!hasToggled ? "--" : !isOn ? "−3%" : "--"}
+            {!hasToggled ? "--" : isOn ? "−3%" : "--"}
           </div>
         </div>
       </div>
